@@ -1,0 +1,12 @@
+<h2>Refactored Form</h2>
+<form [formGroup]="form">
+  <mat-form-field class="example-form-field">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" formControlName="name">
+  </mat-form-field>´
+
+  <app-contact-group></app-contact-group>
+</form>
+<div>
+  {{form.value | json}}
+</div>
