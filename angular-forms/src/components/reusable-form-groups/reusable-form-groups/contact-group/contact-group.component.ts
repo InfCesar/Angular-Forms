@@ -21,7 +21,8 @@ import { MatInput } from '@angular/material/input';
       provide: ControlContainer,
       useFactory: ()=>inject(ControlContainer, {skipSelf: true})
     }
-  ]
+  ],
+  styleUrl: './contact-group.component.scss'
 })
 export class ContactGroupComponent implements OnInit {
   controlContainer = inject(ControlContainer);
