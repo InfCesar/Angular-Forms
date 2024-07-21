@@ -15,14 +15,14 @@ import { Directive, ElementRef, HostListener, inject, Renderer2 } from "@angular
   }
 
   private insertRipple(event: MouseEvent): HTMLElement {
-    const parentElement = this.elementRef.nativeElement;
+    const parentElement: HTMLElement = this.elementRef.nativeElement;
     const diameter = Math.max(parentElement.clientWidth, parentElement.clientHeight);
     const radius = diameter / 2;
     const ripple = this.renderer.createElement("span");
   
     ripple.style.width = ripple.style.height = `${diameter}px`;
-    ripple.style.left = `${event.clientX - parentElement.offsetLeft - radius}px`;
-    ripple.style.top = `${event.clientY - parentElement.offsetTop - radius}px`;
+    ripple.style.left = `${event.pageX - parentElement.offsetLeft - radius}px`;
+    ripple.style.top = `${event.pageY - parentElement.offsetTop - radius}px`;
     ripple.classList.add("ui-ripple");
   
     this.renderer.appendChild(parentElement, ripple);
